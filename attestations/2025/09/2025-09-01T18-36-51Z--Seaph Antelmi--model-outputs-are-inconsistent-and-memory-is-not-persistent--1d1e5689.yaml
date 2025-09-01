@@ -1,0 +1,13 @@
+version: "1.0.0"
+timestamp: "2025-09-01T18-36-51Z"
+username: "Seaph Antelmi"
+terse_summary: "TODO: one-line summary"
+structured_summary:
+  topic_focus: "TODO"
+  key_claims_contradictions: []
+  implications_collapse_points: []
+  next_actions_witnessed_silences: []
+links:
+  related_commits: []
+  exhibits: []
+  gpg_keyid: "TODO"

@@ -1,0 +1,54 @@
+---
+$schema: "https://json-schema.org/draft/2020-12/schema"
+title: ChronicleEntry
+type: object
+required:
+  - version
+  - timestamp
+  - username
+  - terse_summary
+  - structured_summary
+properties:
+  version:
+    type: string
+    pattern: "^1\\.0\\.\\d+$"
+  timestamp:
+    type: string
+    format: date-time
+  username:
+    type: string
+    minLength: 1
+  terse_summary:
+    type: string
+    maxLength: 200
+  structured_summary:
+    type: object
+    required:
+      - topic_focus
+      - key_claims_contradictions
+      - implications_collapse_points
+      - next_actions_witnessed_silences
+    properties:
+      topic_focus: {type: string}
+      key_claims_contradictions:
+        type: array
+        items: {type: string}
+      implications_collapse_points:
+        type: array
+        items: {type: string}
+      next_actions_witnessed_silences:
+        type: array
+        items: {type: string}
+  links:
+    type: object
+    properties:
+      related_commits:
+        type: array
+        items:
+          type: string
+          pattern: "^[0-9a-f]{7,40}$"
+      exhibits:
+        type: array
+        items: {type: string}
+      gpg_keyid:
+        type: string
